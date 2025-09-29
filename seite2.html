@@ -5,41 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Einladung zur Feier</title>
   <style>
-    html, body {
-      margin: 0; padding: 0; height: 100%;
-    }
+    html, body { margin: 0; padding: 0; height: 100%; }
     body {
-      background: url('hintergrund.png') no-repeat center center fixed;
-      background-size: cover;
-      display: flex; align-items: center; justify-content: center;
-      text-align: center; font-family: "Segoe UI", Arial, sans-serif;
-      color: white; padding: 1rem;
+      min-height: 100vh;
+      min-height: 100svh; /* stabilere Höhe auf Mobilgeräten */
+      background: #000 url('hintergrund.png?v=3') center / cover no-repeat; /* kein 'fixed' = besser mobil */
+      display: grid;
+      place-items: center;  /* zentriert auf großen Screens */
+      padding: 16px;
+      color: white;
+      font-family: "Segoe UI", Arial, sans-serif;
+      overflow: auto;       /* sorgt dafür, dass lange Inhalte immer scrollen */
     }
+
     .textbox {
+      width: min(640px, 100%);
       background: rgba(0, 0, 0, 0.35);
-      padding: 2rem;
+      backdrop-filter: blur(2px);
+      padding: clamp(16px, 3.5vw, 24px);
       border-radius: 12px;
-      max-width: 640px;
       line-height: 1.55;
       box-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
 
-    /* ✨ Schriftgrößen */
+    /* Dezentere, gut lesbare Größen */
     h1 {
       font-size: 1.8rem;
-      margin-bottom: 1rem;
+      margin: 0 0 1rem;
       color: #ffdf6b;
+      line-height: 1.2;
     }
     p {
       font-size: 0.95rem;
-      margin-bottom: 1rem;
+      margin: 0 0 1rem;
       line-height: 1.5;
     }
 
-    /* ✉️ Kleiner, dezenter Button */
+    /* Kleiner, neutraler Zusage-Button */
     .btn {
       display: inline-block;
-      margin-top: .5rem;
+      margin-top: .25rem;
       padding: 0.5rem 0.9rem;
       border-radius: 6px;
       background: rgba(255, 255, 255, 0.85);
@@ -48,67 +53,63 @@
       font-weight: 600;
       font-size: 0.85rem;
       border: none;
-      cursor: pointer;
       box-shadow: 0 3px 8px rgba(0,0,0,0.25);
-      transition: background 0.2s ease, transform 0.2s ease;
+      transition: background .2s ease, transform .2s ease;
     }
-    .btn:hover {
-      background: rgba(255, 255, 255, 1);
-      transform: translateY(-1px);
-    }
+    .btn:hover { background: #fff; transform: translateY(-1px); }
 
-    .small-note {
-      margin-top: 0.8rem;
-      font-size: 0.8rem;
-      opacity: 0.85;
-    }
-
-    .tiny {
-      margin-top: 1rem;
-      font-size: 0.8rem;
-      opacity: 0.8;
-    }
-
+    .small-note { margin-top: .6rem; font-size: .8rem; opacity: .85; }
+    .tiny { margin-top: 1rem; font-size: .8rem; opacity: .8; }
     .gift {
       margin-top: 1.2rem;
-      font-size: 0.85rem;
+      font-size: .85rem;
       line-height: 1.4;
-      background: rgba(255, 255, 255, 0.12);
-      padding: 0.8rem;
+      background: rgba(255,255,255,.12);
+      padding: .8rem;
       border-radius: 8px;
       font-style: italic;
+    }
+
+    /* Auf kleinen Displays oben ausrichten und Luft geben */
+    @media (max-width: 480px), (max-height: 700px) {
+      body { place-items: start center; }
+      .textbox { margin: 12px 0 24px; }
+      h1 { font-size: 1.6rem; }
+      p { font-size: 0.92rem; }
     }
   </style>
 </head>
 <body>
   <div class="textbox">
-    <h1>Hallo ihr Lieben </h1>
+    <h1>Hallo ihr Lieben 🎉</h1>
 
     <p>Dieses Jahr ist es soweit – ich werde <strong>40!</strong><br>
     Und das möchte ich gerne gemeinsam mit euch feiern.</p>
 
     <p>Darum lade ich euch herzlich ein am<br>
-    <strong>Samstag, den 29. November 2025 ab 17 Uhr</strong><br>
-    auf den Obsthof Sehringer,<br>
-    Hauptstraße 1A, 79227 Mengen.</p>
+      <strong>Samstag, den 29. November 2025 ab 17 Uhr</strong><br>
+      auf den Obsthof Sehringer,<br>
+      Hauptstraße 1A, 79227 Mengen.</p>
 
     <p>Freut euch auf einen entspannten Abend mit leckerem Essen, guter Laune und viel Zeit für gemeinsame Erinnerungen. Lasst uns zusammen anstoßen und den 40er gebührend feiern!</p>
 
     <p>Gebt mir bitte <strong>bis Ende Oktober</strong> Bescheid,<br>
-    ob ihr dabei seid.</p>
+      ob ihr dabei seid.</p>
 
-    <!-- ✉️ Zusage-Button -->
+    <!-- Zusage-Button -->
     <a
       class="btn"
       href="mailto:andreas.reichenecker@gmail.com?subject=Zusage%2040.%20Geburtstag&body=Hallo%20Andreas,%0D%0A%0D%0AWir%20freuen%20uns%20auf%20das%20Fest%20und%20kommen%20mit%20...%20Personen.%0D%0A%0D%0ALiebe%20Gr%C3%BC%C3%9Fe%0D%0A[Dein%20Name]"
     >Zusage</a>
 
-    <p class="small-note"><em>Falls der Button nicht funktioniert: einfach an
-      <strong>DEINE-EMAIL@beispiel.de</strong> mailen.</em></p>
+    <p class="small-note">
+      <em>Falls der Button nicht funktioniert: einfach an
+        <strong>DEINE-EMAIL@beispiel.de</strong> mailen.</em>
+    </p>
 
     <p class="tiny">Bis bald<br><strong>Andreas</strong></p>
 
-    <!-- 🎁 Geschenk-Hinweis ganz unten -->
+    <!-- Geschenk-Hinweis am Schluss -->
     <p class="gift">
       <strong>Geschenke:</strong><br>
       Da ich mir zum 40. den Traum von einem Pizzaofen erfüllen möchte, könnt ihr euch gerne daran beteiligen.
