@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zweite Seite</title>
+  <title>Einladung zur Feier</title>
   <style>
     html, body {
       margin: 0;
@@ -12,35 +12,57 @@
     }
     body {
       background: url('hintergrund.png') no-repeat center center fixed;
-      background-size: cover;       /* sorgt dafür, dass das Bild den ganzen Bildschirm ausfüllt */
-      display: flex;                /* ermöglicht einfache Zentrierung */
-      align-items: center;          /* vertikal zentriert */
-      justify-content: center;      /* horizontal zentriert */
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      color: white;                 /* Textfarbe */
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: white;
+      padding: 1rem;
+    }
+    .textbox {
+      background: rgba(0, 0, 0, 0.5); /* halbtransparenter Hintergrund für bessere Lesbarkeit */
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 600px;
+      line-height: 1.5;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    h1 {
       font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ffdf6b; /* goldgelb */
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .important {
+      font-weight: bold;
+      color: #ffb6b6;
     }
   </style>
 </head>
 <body>
-  <div>
-    Hallo ihr lieben,
-dieses Jahr ist es soweit – ich werde 40!
-Und das möchte ich gerne gemeinsam mit euch feiern.
+  <div class="textbox">
+    <h1>Hallo ihr Lieben 🎉</h1>
 
-Darum lade ich euch herzlich ein am
-Samstag, den 29. November 2025 ab 17 Uhr
-auf den Obsthof Sehringer, 
-Hauptstraße 1A, 79227 Mengen.
+    <p>Dieses Jahr ist es soweit – ich werde <span class="important">40!</span><br>
+    Und das möchte ich gerne gemeinsam mit euch feiern.</p>
 
-Freut euch auf einen entspannten Abend mit leckerem Essen, guter Laune und viel Zeit für gemeinsame Erinnerungen. Lasst uns zusammen anstoßen und den 40er gebührend feiern!
+    <p>Darum lade ich euch herzlich ein am<br>
+    <strong>Samstag, den 29. November 2025 ab 17 Uhr</strong><br>
+    auf den Obsthof Sehringer,<br>
+    Hauptstraße 1A, 79227 Mengen.</p>
 
-Gebt mir bitte bis Ende Oktober Bescheid,
- ob ihr dabei seid:
+    <p>Freut euch auf einen entspannten Abend mit leckerem Essen, guter Laune und viel Zeit für gemeinsame Erinnerungen. Lasst uns zusammen anstoßen und den 40er gebührend feiern!</p>
 
-Bis bald
-Andreas
+    <p>Gebt mir bitte <strong>bis Ende Oktober</strong> Bescheid,<br>
+    ob ihr dabei seid.</p>
+
+    <p>Bis bald<br>
+    <strong>Andreas</strong></p>
   </div>
 </body>
 </html>
