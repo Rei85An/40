@@ -16,50 +16,75 @@
       color: white; padding: 1rem;
     }
     .textbox {
-      background: rgba(0,0,0,.5);
-      padding: 2rem; border-radius: 12px; max-width: 640px;
-      line-height: 1.55; box-shadow: 0 0 20px rgba(0,0,0,.5);
+      background: rgba(0, 0, 0, 0.35);   /* 👈 etwas heller als vorher */
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 640px;
+      line-height: 1.55;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
+
+    /* ✨ Schriftgrößen */
     h1 {
-  font-size: 1.8rem;      /* dezente, aber auffällige Überschrift */
-  margin-bottom: 1rem;
-  color: #ffdf6b;
-}
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #ffdf6b;
+    }
+    p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .important {
+      font-weight: 700;
+      color: #ffb6b6;
+    }
 
-p {
-  font-size: 0.95rem;     /* angenehme Fließtextgröße */
-  margin-bottom: 1rem;
-  line-height: 1.5;       /* bessere Lesbarkeit */
-}
+    /* ✉️ Dezenter Button */
+    .btn {
+      display: inline-block;
+      margin-top: .5rem;
+      padding: 0.7rem 1.1rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.8);
+      color: #1a1a1a;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .btn:hover {
+      background: rgba(255, 255, 255, 1);
+      transform: translateY(-1px);
+    }
 
-.small-note {
-  font-size: 0.8rem;      /* dezenter Hilfetext */
-  opacity: 0.85;
-}
-
-.gift {
-  font-size: 0.85rem;     /* leicht betont, aber nicht zu groß */
-  line-height: 1.4;
-}
-
-.tiny {
-  font-size: 0.8rem;      /* Schlussabsatz (z. B. "Bis bald") */
-  opacity: 0.8;
-}
-
+    .small-note {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
     .gift {
       margin-top: 1.2rem;
-      font-size: .9rem;
-      background: rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+      line-height: 1.4;
+      background: rgba(255, 255, 255, 0.12);
       padding: 0.8rem;
       border-radius: 8px;
       font-style: italic;
+    }
+    .tiny {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
   <div class="textbox">
-    <h1>Hallo ihr Lieben </h1>
+    <h1>Hallo ihr Lieben</h1>
 
     <p>Dieses Jahr ist es soweit – ich werde <span class="important">40!</span><br>
     Und das möchte ich gerne gemeinsam mit euch feiern.</p>
@@ -74,13 +99,16 @@ p {
     <p>Gebt mir bitte <strong>bis Ende Oktober</strong> Bescheid,<br>
     ob ihr dabei seid.</p>
 
-    <!-- ✅ Antwort-Button: E-Mail-Adresse unten ersetzen -->
+    <!-- ✉️ Antwort-Button -->
     <a
       class="btn"
-      href="mailto:andreas.reichenecker@gmail.com?subject=R%C3%BCckmeldung%2040.%20Geburtstag%20%E2%80%93%20Zusage&body=Hallo%20Andreas,%0D%0A%0D%0AWir%20freuen%20uns%20auf%20das%20Fest%20und%20kommen%20mit%20...%20Personen.%0D%0A%0D%0ALiebe%20Gr%C3%BC%C3%9Fe%0D%0A[Dein%20Name]"
-    >Rückmeldung</a>
+      href="mailto:DEINE-EMAIL@beispiel.de?subject=R%C3%BCckmeldung%2040.%20Geburtstag%20%E2%80%93%20Zusage&body=Hallo%20Andreas,%0D%0A%0D%0AWir%20freuen%20uns%20auf%20das%20Fest%20und%20kommen%20mit%20...%20Personen.%0D%0A%0D%0ALiebe%20Gr%C3%BC%C3%9Fe%0D%0A[Dein%20Name]"
+    >Jetzt zusagen per E-Mail</a>
 
-    <!--  Geschenk-Hinweis -->
+    <p class="small-note"><em>Falls der Button nicht funktioniert: einfach an
+      <strong>DEINE-EMAIL@beispiel.de</strong> mailen.</em></p>
+
+    <!-- 🎁 Geschenk-Hinweis -->
     <p class="gift">
       <strong>Geschenke:</strong><br>
       Da ich mir zum 40. den Traum von einem Pizzaofen erfüllen möchte, könnt ihr euch gerne daran beteiligen.
