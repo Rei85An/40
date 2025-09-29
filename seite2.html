@@ -16,7 +16,7 @@
       color: white; padding: 1rem;
     }
     .textbox {
-      background: rgba(0, 0, 0, 0.35);   /* 👈 etwas heller als vorher */
+      background: rgba(0, 0, 0, 0.35);
       padding: 2rem;
       border-radius: 12px;
       max-width: 640px;
@@ -35,25 +35,21 @@
       margin-bottom: 1rem;
       line-height: 1.5;
     }
-    .important {
-      font-weight: 700;
-      color: #ffb6b6;
-    }
 
-    /* ✉️ Dezenter Button */
+    /* ✉️ Kleiner, dezenter Button */
     .btn {
       display: inline-block;
       margin-top: .5rem;
-      padding: 0.7rem 1.1rem;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.8);
+      padding: 0.5rem 0.9rem;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.85);
       color: #1a1a1a;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       border: none;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.25);
       transition: background 0.2s ease, transform 0.2s ease;
     }
     .btn:hover {
@@ -62,10 +58,17 @@
     }
 
     .small-note {
-      margin-top: 1rem;
+      margin-top: 0.8rem;
       font-size: 0.8rem;
       opacity: 0.85;
     }
+
+    .tiny {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+
     .gift {
       margin-top: 1.2rem;
       font-size: 0.85rem;
@@ -75,18 +78,13 @@
       border-radius: 8px;
       font-style: italic;
     }
-    .tiny {
-      margin-top: 1rem;
-      font-size: 0.8rem;
-      opacity: 0.8;
-    }
   </style>
 </head>
 <body>
   <div class="textbox">
-    <h1>Hallo ihr Lieben</h1>
+    <h1>Hallo ihr Lieben </h1>
 
-    <p>Dieses Jahr ist es soweit – ich werde <span class="important">40!</span><br>
+    <p>Dieses Jahr ist es soweit – ich werde <strong>40!</strong><br>
     Und das möchte ich gerne gemeinsam mit euch feiern.</p>
 
     <p>Darum lade ich euch herzlich ein am<br>
@@ -99,22 +97,22 @@
     <p>Gebt mir bitte <strong>bis Ende Oktober</strong> Bescheid,<br>
     ob ihr dabei seid.</p>
 
-    <!-- ✉️ Antwort-Button -->
+    <!-- ✉️ Zusage-Button -->
     <a
       class="btn"
-      href="mailto:DEINE-EMAIL@beispiel.de?subject=R%C3%BCckmeldung%2040.%20Geburtstag%20%E2%80%93%20Zusage&body=Hallo%20Andreas,%0D%0A%0D%0AWir%20freuen%20uns%20auf%20das%20Fest%20und%20kommen%20mit%20...%20Personen.%0D%0A%0D%0ALiebe%20Gr%C3%BC%C3%9Fe%0D%0A[Dein%20Name]"
-    >Jetzt zusagen per E-Mail</a>
+      href="mailto:andreas.reichenecker@gmail.com?subject=Zusage%2040.%20Geburtstag&body=Hallo%20Andreas,%0D%0A%0D%0AWir%20freuen%20uns%20auf%20das%20Fest%20und%20kommen%20mit%20...%20Personen.%0D%0A%0D%0ALiebe%20Gr%C3%BC%C3%9Fe%0D%0A[Dein%20Name]"
+    >Zusage</a>
 
     <p class="small-note"><em>Falls der Button nicht funktioniert: einfach an
       <strong>DEINE-EMAIL@beispiel.de</strong> mailen.</em></p>
 
-    <!-- 🎁 Geschenk-Hinweis -->
+    <p class="tiny">Bis bald<br><strong>Andreas</strong></p>
+
+    <!-- 🎁 Geschenk-Hinweis ganz unten -->
     <p class="gift">
       <strong>Geschenke:</strong><br>
       Da ich mir zum 40. den Traum von einem Pizzaofen erfüllen möchte, könnt ihr euch gerne daran beteiligen.
     </p>
-
-    <p class="tiny">Bis bald<br><strong>Andreas</strong></p>
   </div>
 </body>
 </html>
