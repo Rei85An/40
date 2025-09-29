@@ -5,22 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Startseite</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
+    html, body { margin: 0; padding: 0; height: 100%; }
+    body {
+      min-height: 100vh;
+      min-height: 100svh;            /* stabilere Höhe auf Mobilgeräten */
       background: #000;
+      position: relative;
+      overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
     }
-    img {
+
+    /* Vollflächiger Link mit Hintergrundbild */
+    .splash {
+      position: fixed; inset: 0;
       display: block;
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-      cursor: pointer; /* zeigt an, dass man klicken kann */
+      background: #000 url('front.png?v=3') center / cover no-repeat;
+    }
+    /* In Hochkant lieber "contain", damit nichts abgeschnitten wird */
+    @media (orientation: portrait) {
+      .splash {
+        background-size: contain;    /* zeigt das ganze Querformat-Bild, mit Balken */
+        background-position: center;
+      }
+    }
+
+    /* dezenter Hinweis (optional) */
+    .hint {
+      position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%);
+      font: 600 0.85rem system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: rgba(255,255,255,.85);
+      padding: .35rem .6rem;
+      background: rgba(0,0,0,.45);
+      border-radius: 999px;
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
-  <img src="front.png" alt="Startseite" onclick="window.location.href='seite2.html'" />
+  <a class="splash" href="seite2.html" aria-label="Weiter zur Einladung"></a>
+  <div class="hint">Tippen, um fortzufahren</div>
 </body>
 </html>
