@@ -5,83 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Einladung zur Feier</title>
   <style>
-    html, body { margin: 0; padding: 0; height: 100%; }
-    body {
-      min-height: 100vh;
-      min-height: 100svh; /* stabilere Höhe auf Mobilgeräten */
-      background: #000 url('hintergrund.png?v=3') center / cover no-repeat; /* kein 'fixed' = besser mobil */
-      display: grid;
-      place-items: center;  /* zentriert auf großen Screens */
-      padding: 16px;
-      color: white;
-      font-family: "Segoe UI", Arial, sans-serif;
-      overflow: auto;       /* sorgt dafür, dass lange Inhalte immer scrollen */
+    :root{
+      --bg-desktop: url('hintergrund.png?v=7');
+      --bg-mobile:  url('hintergrund-mobile.png?v=7');
+      --box-bg: rgba(0,0,0,0.22);
     }
 
-    .textbox {
+    html, body { margin: 0; padding: 0; height: 100%; }
+    body{
+      min-height: 100vh;
+      min-height: 100svh;
+      background: #000 var(--bg-desktop) center / cover no-repeat;
+      display: grid; place-items: center;
+      padding: 16px; color: #fff;
+      font-family: "Segoe UI", Arial, sans-serif;
+      overflow: auto;
+    }
+
+    .textbox{
       width: min(640px, 100%);
-      background: rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(2px);
+      background: var(--box-bg);
+      backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);
       padding: clamp(16px, 3.5vw, 24px);
       border-radius: 12px;
       line-height: 1.55;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      box-shadow: 0 0 20px rgba(0,0,0,0.35);
     }
 
-    /* Dezentere, gut lesbare Größen */
-    h1 {
+    h1{
       font-size: 1.8rem;
       margin: 0 0 1rem;
       color: #ffdf6b;
       line-height: 1.2;
+      text-shadow: 0 1px 2px rgba(0,0,0,.5);
     }
-    p {
+    p{
       font-size: 0.95rem;
       margin: 0 0 1rem;
       line-height: 1.5;
+      text-shadow: 0 1px 2px rgba(0,0,0,.5);
     }
 
-    /* Kleiner, neutraler Zusage-Button */
-    .btn {
-      display: inline-block;
-      margin-top: .25rem;
-      padding: 0.5rem 0.9rem;
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.85);
-      color: #1a1a1a;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.85rem;
-      border: none;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.25);
-      transition: background .2s ease, transform .2s ease;
+    .btn{
+      display:inline-block; margin-top:.25rem; padding:.5rem .9rem; border-radius:6px;
+      background:rgba(255,255,255,.85); color:#1a1a1a; text-decoration:none;
+      font-weight:600; font-size:.85rem; border:none;
+      box-shadow:0 3px 8px rgba(0,0,0,.25);
+      transition:background .2s ease, transform .2s ease;
     }
-    .btn:hover { background: #fff; transform: translateY(-1px); }
+    .btn:hover{ background:#fff; transform:translateY(-1px); }
 
-    .small-note { margin-top: .6rem; font-size: .8rem; opacity: .85; }
-    .tiny { margin-top: 1rem; font-size: .8rem; opacity: .8; }
-    .gift {
-      margin-top: 1.2rem;
-      font-size: .85rem;
-      line-height: 1.4;
-      background: rgba(255,255,255,.12);
-      padding: .8rem;
-      border-radius: 8px;
-      font-style: italic;
+    .small-note{ margin-top:.6rem; font-size:.8rem; opacity:.85; text-shadow:none; }
+    .tiny{ margin-top:1rem; font-size:.8rem; opacity:.85; text-shadow:none; }
+    .gift{
+      margin-top:1.2rem; font-size:.85rem; line-height:1.4;
+      background:rgba(255,255,255,.12); padding:.8rem; border-radius:8px; font-style:italic; text-shadow:none;
     }
 
-    /* Auf kleinen Displays oben ausrichten und Luft geben */
-    @media (max-width: 480px), (max-height: 700px) {
-      body { place-items: start center; }
-      .textbox { margin: 12px 0 24px; }
-      h1 { font-size: 1.6rem; }
-      p { font-size: 0.92rem; }
+    @media (max-width: 600px), (orientation: portrait){
+      body{ background-image: var(--bg-mobile); place-items: start center; }
+      :root{ --box-bg: rgba(0,0,0,0.16); }
+      .textbox{ margin: 12px 0 24px; }
+      h1{ font-size: 1.6rem; }
+      p{ font-size: 0.92rem; }
     }
   </style>
 </head>
 <body>
   <div class="textbox">
-    <h1>Hallo ihr Lieben </h1>
+    <h1>Hallo ihr Lieben</h1>
 
     <p>Dieses Jahr ist es soweit – ich werde <strong>40!</strong><br>
     Und das möchte ich gerne gemeinsam mit euch feiern.</p>
@@ -96,15 +88,18 @@
     <p>Gebt mir bitte <strong>bis Ende Oktober</strong> Bescheid,<br>
       ob ihr dabei seid.</p>
 
-    <!-- Zusage-Button -->
     <a
       class="btn"
       href="mailto:andreas.reichenecker@gmail.com?subject=Zusage%2040.%20Geburtstag&body=Hallo%20Andreas,%0D%0A%0D%0AWir%20freuen%20uns%20auf%20das%20Fest%20und%20kommen%20mit%20...%20Personen.%0D%0A%0D%0ALiebe%20Gr%C3%BC%C3%9Fe%0D%0A[Dein%20Name]"
     >Zusage</a>
 
+    <p class="small-note">
+      <em>Falls der Button nicht funktioniert: einfach an
+        <strong>andreas.reichenecker@gmail.com</strong> mailen.</em>
+    </p>
+
     <p class="tiny">Bis bald<br><strong>Andreas</strong></p>
 
-    <!-- Geschenk-Hinweis am Schluss -->
     <p class="gift">
       <strong>Geschenke:</strong><br>
       Da ich mir zum 40. den Traum von einem Pizzaofen erfüllen möchte, könnt ihr euch gerne daran beteiligen. Sparschwein steht bereit.
