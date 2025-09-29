@@ -6,47 +6,52 @@
   <title>Einladung zur Feier</title>
   <style>
     html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
+      margin: 0; padding: 0; height: 100%;
     }
     body {
       background: url('hintergrund.png') no-repeat center center fixed;
       background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-family: "Segoe UI", Arial, sans-serif;
-      color: white;
-      padding: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; font-family: "Segoe UI", Arial, sans-serif;
+      color: white; padding: 1rem;
     }
     .textbox {
-      background: rgba(0, 0, 0, 0.5); /* halbtransparenter Hintergrund für bessere Lesbarkeit */
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 600px;
-      line-height: 1.5;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      background: rgba(0,0,0,.5);
+      padding: 2rem; border-radius: 12px; max-width: 640px;
+      line-height: 1.55; box-shadow: 0 0 20px rgba(0,0,0,.5);
     }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #ffdf6b; /* goldgelb */
+    h1 { font-size: 2rem; margin: 0 0 1rem; color: #ffdf6b; }
+    p  { font-size: 1.1rem; margin: 0 0 1rem; }
+    .important { font-weight: 700; color: #ffb6b6; }
+
+    .btn {
+      display: inline-block; margin-top: .5rem;
+      padding: .9rem 1.2rem; border-radius: 10px;
+      background: #ffdf6b; color: #1a1a1a; text-decoration: none;
+      font-weight: 700; border: none; cursor: pointer;
+      box-shadow: 0 8px 18px rgba(0,0,0,.25);
     }
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
+    .btn:hover { transform: translateY(-1px); }
+
+    .small-note {
+      margin-top: 1.25rem; font-size: .9rem; opacity: .85;
     }
-    .important {
-      font-weight: bold;
-      color: #ffb6b6;
+    .tiny {
+      margin-top: 1rem; font-size: .85rem; opacity: .8;
+    }
+    .gift {
+      margin-top: 1.2rem;
+      font-size: .9rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.8rem;
+      border-radius: 8px;
+      font-style: italic;
     }
   </style>
 </head>
 <body>
   <div class="textbox">
-    <h1>Hallo ihr Lieben 🎉</h1>
+    <h1>Hallo ihr Lieben </h1>
 
     <p>Dieses Jahr ist es soweit – ich werde <span class="important">40!</span><br>
     Und das möchte ich gerne gemeinsam mit euch feiern.</p>
@@ -61,8 +66,22 @@
     <p>Gebt mir bitte <strong>bis Ende Oktober</strong> Bescheid,<br>
     ob ihr dabei seid.</p>
 
-    <p>Bis bald<br>
-    <strong>Andreas</strong></p>
+    <!-- ✅ Antwort-Button: E-Mail-Adresse unten ersetzen -->
+    <a
+      class="btn"
+      href="mailto:andreas.reichenecker@gmail.com?subject=R%C3%BCckmeldung%2040.%20Geburtstag%20%E2%80%93%20Zusage&body=Hallo%20Andreas,%0D%0A%0D%0AWir%20freuen%20uns%20auf%20das%20Fest%20und%20kommen%20mit%20...%20Personen.%0D%0A%0D%0ALiebe%20Gr%C3%BC%C3%9Fe%0D%0A[Dein%20Name]"
+    >Rückmeldung</a>
+
+    <p class="small-note"><em>Falls der Button nicht funktioniert: einfach an
+      <strong>andreas.reichenecker@gmail.com</strong> mailen.</em></p>
+
+    <!--  Geschenk-Hinweis -->
+    <p class="gift">
+      <strong>Geschenke:</strong><br>
+      Da ich mir zum 40. den Traum von einem Pizzaofen erfüllen möchte, könnt ihr euch gerne daran beteiligen.
+    </p>
+
+    <p class="tiny">Bis bald<br><strong>Andreas</strong></p>
   </div>
 </body>
 </html>
